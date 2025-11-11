@@ -1,20 +1,15 @@
 {
   "version": 2,
   "framework": null,
+  "buildCommand": "composer install --no-dev --optimize-autoloader",
+  "installCommand": "",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.5.3"
     }
   },
   "routes": [
-    {
-      "src": "/build/(.*)",
-      "dest": "/public/build/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
-    }
-  ],
-  "buildCommand": "composer install --no-dev --optimize-autoloader"
+    { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
 }
