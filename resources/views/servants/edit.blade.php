@@ -64,4 +64,34 @@
                             @error('address')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                        </div
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+                            <select class="form-select @error('status') is-invalid @enderror" id="status" name="status"
+                                required>
+                                <option value="active" {{ old('status', $servant->status) == 'active' ? 'selected' : '' }}>
+                                    Aktif</option>
+                                <option value="inactive"
+                                    {{ old('status', $servant->status) == 'inactive' ? 'selected' : '' }}>Tidak Aktif
+                                </option>
+                            </select>
+                            @error('status')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="bi bi-save me-1"></i>Update
+                            </button>
+                            <a href="{{ route('servants.index') }}" class="btn btn-secondary">
+                                <i class="bi bi-x-circle me-1"></i>Batal
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
