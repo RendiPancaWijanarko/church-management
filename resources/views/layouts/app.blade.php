@@ -76,6 +76,18 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('schedules.*') ? 'active' : '' }}"
+                            href="{{ route('schedules.index') }}">
+                            <i class="bi bi-calendar-check me-1"></i>Jadwal
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('schedules-by-category') ? 'active' : '' }}"
+                            href="{{ route('schedules.by-category') }}">
+                            <i class="bi bi-collection me-1"></i>Per Kategori
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('servants.*') ? 'active' : '' }}"
                             href="{{ route('servants.index') }}">
                             <i class="bi bi-people me-1"></i>Pelayan
@@ -117,8 +129,9 @@
     <footer class="bg-light text-center py-4 mt-5">
         <div class="container">
             <p class="text-muted mb-0">
-                &copy; {{ date('Y') }} Manajemen Pelayan Gereja.
-                <span class="d-none d-md-inline">Dibuat dengan <i class="bi bi-heart-fill text-danger"></i></span>
+                &copy; {{ date('Y') }} CV FlyHigh Sinergi Indonesia.
+                <span class="d-none d-md-inline">Dibuat oleh Rendi dengan <i
+                        class="bi bi-heart-fill text-danger"></i></span>
             </p>
         </div>
     </footer>

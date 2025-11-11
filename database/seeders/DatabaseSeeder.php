@@ -10,6 +10,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CategorySeeder::class,
+            // ServantSeeder::class, // Buat jika perlu
+            // ScheduleSeeder::class, // Jalankan setelah ada data servant
         ]);
     }
 }

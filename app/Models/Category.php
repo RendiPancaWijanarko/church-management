@@ -15,4 +15,8 @@ class Category extends Model
     {
         return $this->hasMany(Servant::class);
     }
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 }
